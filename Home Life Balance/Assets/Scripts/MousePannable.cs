@@ -7,6 +7,7 @@ public class MousePannable : MonoBehaviour
     public float sensitivity;
     private Vector3 lastCameraPosition;
     public string tagThatBlocksPanning = "UnplacedBlock";
+    public bool pannable;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,9 @@ public class MousePannable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.FindGameObjectsWithTag(tagThatBlocksPanning).Length == 0) {
+        if (GameObject.FindGameObjectsWithTag(tagThatBlocksPanning).Length <= 1)
+        {
+            pannable = true;
             if (Input.GetMouseButtonDown(1))
             {
                 lastCameraPosition = Input.mousePosition;
@@ -29,6 +32,9 @@ public class MousePannable : MonoBehaviour
                 transform.Translate(0, delta.y * -sensitivity, 0);
                 lastCameraPosition = Input.mousePosition;
             }
+        }
+        else {
+            pannable = false;
         }
     }
 }
