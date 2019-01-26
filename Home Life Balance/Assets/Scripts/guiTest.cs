@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class guiTest : MonoBehaviour
 {
+	public Font font;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +22,10 @@ public class guiTest : MonoBehaviour
     {
         if (Application.isEditor)
         {
+			GUI.skin.label.font = font;
             GUI.skin.label.wordWrap = false;
             GUI.skin.label.clipping = 0;
-            GUI.Label(new Rect(transform.position.x, transform.position.y, 100, 100), string.Format("{0}", "test"));
+            GUI.Label(new Rect(4, 16 * 0, 100, 100), string.Format("{0}", "test"));
         }
     }
 }
