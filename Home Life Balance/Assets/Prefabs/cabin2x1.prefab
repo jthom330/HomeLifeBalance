@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8979047503556647277}
   - component: {fileID: 8979047503556647276}
   - component: {fileID: 8979047503556647279}
+  - component: {fileID: 6395876111941572799}
   m_Layer: 0
   m_Name: cabin2x1
   m_TagString: UnplacedBlock
@@ -144,3 +145,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.7435603, y: 9.410801}
   m_EdgeRadius: 0
+--- !u!114 &6395876111941572799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8979047503556647278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954035a0408fbc643a6bf1f4083344da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countDown: 10
