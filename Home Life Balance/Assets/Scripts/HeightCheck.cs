@@ -5,7 +5,7 @@ using UnityEngine;
 public class HeightCheck : MonoBehaviour
 {
 
-    public float resetTimer = 10f;
+    public float resetTimer = 2f;
 
     private void Update()
     {
@@ -26,7 +26,7 @@ public class HeightCheck : MonoBehaviour
 			//Debug.LogFormat("collisionBlock stay: {0}", collision.transform.position);
             collision.GetComponent<BlockTimer>().StartTimer();
         }
-        resetTimer = 10f;
+        resetTimer = 2f;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
