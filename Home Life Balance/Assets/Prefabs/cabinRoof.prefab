@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7551554183902381764}
   - component: {fileID: 2438805392431053263}
   - component: {fileID: 5259222937352849240}
+  - component: {fileID: 3831434182988807842}
   m_Layer: 0
   m_Name: cabinRoof
   m_TagString: UnplacedBlock
@@ -160,3 +161,16 @@ PolygonCollider2D:
     - - {x: -0.44742346, y: 4.342578}
       - {x: -9.619704, y: -5.229902}
       - {x: 8.687231, y: -5.176139}
+--- !u!114 &3831434182988807842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7772890714586561049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e564af5527c92734b921fd58d45d67a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectValue: 10

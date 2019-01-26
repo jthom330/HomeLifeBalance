@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5290463933787084332}
   - component: {fileID: 5290463933787084335}
   - component: {fileID: 2498781482822116095}
+  - component: {fileID: 5348313611761528475}
   m_Layer: 0
   m_Name: cabin1x4
   m_TagString: UnplacedBlock
@@ -158,3 +159,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDown: 10
+--- !u!114 &5348313611761528475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290463933787084334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e564af5527c92734b921fd58d45d67a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectValue: 10
