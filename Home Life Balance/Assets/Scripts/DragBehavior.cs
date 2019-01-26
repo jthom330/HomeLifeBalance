@@ -17,6 +17,7 @@ public class DragBehavior : MonoBehaviour
 
     private void OnMouseDown()
     {
+        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         if (pickup)
         {
             gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
