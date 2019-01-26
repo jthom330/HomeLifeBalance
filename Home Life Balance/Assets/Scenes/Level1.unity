@@ -189,7 +189,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1180239239
 PrefabInstance:
@@ -241,7 +241,7 @@ PrefabInstance:
     - target: {fileID: 7523877202026930592, guid: 8c409a73714f0de43aad59f2e88a2203,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7523877202026930592, guid: 8c409a73714f0de43aad59f2e88a2203,
         type: 3}
@@ -379,7 +379,7 @@ PrefabInstance:
     - target: {fileID: 5519648549004324586, guid: a02dcf30a28d5ea45b95222d6f3f8a21,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5519648549004324586, guid: a02dcf30a28d5ea45b95222d6f3f8a21,
         type: 3}
@@ -514,3 +514,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sensitivity: 0.05
+  tagThatBlocksPanning: UnplacedBlock
