@@ -13,6 +13,7 @@ public class HeightCheck : MonoBehaviour
         if (resetTimer <= 0)
         {
             //remove roof option 
+            
         }
     }
 
