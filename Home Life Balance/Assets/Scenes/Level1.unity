@@ -382,5 +382,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80288fc212b3ab46bf4e9891d0f460b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tag: PlacedBlock
-  cameraSpeed: 2
+  objectTag: PlacedBlock
+  cameraSpeed: 1
+  verticalOffset: 0
+  startingZoomDistance: 5
+  maxZoomDistance: 7
+  zoomFactor: 0.5
