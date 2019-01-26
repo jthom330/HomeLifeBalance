@@ -40,6 +40,7 @@ public class DragBehavior : MonoBehaviour
         if (pickup)
         {
             gameObject.GetComponent<Rigidbody2D>().gravityScale = localGravityScale;
+			gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             gameObject.tag = "PlacedBlock";
             pickup = false;
         }
