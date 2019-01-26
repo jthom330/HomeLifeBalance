@@ -52,7 +52,7 @@ public class FollowHighestObject : MonoBehaviour
     void AdjustCameraPosition() {
         gameObjectsWithTag = GameObject.FindGameObjectsWithTag(objectTag);
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && this.GetComponent<MousePannable>().pannable)
         {
             isCameraAdjustPaused = true;
             StopCoroutine("PauseCameraMoving");
