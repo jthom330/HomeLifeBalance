@@ -11,11 +11,15 @@ public class FollowHighestObject : MonoBehaviour
     public float startingZoomDistance;
     public float maxZoomDistance;
     public float zoomFactor;
+    public float pauseLength;
 
     private Vector3 newCameraPos;
     private float currentZoomDistance;
     private float newZoomDistance;
     private GameObject highestGameObject;
+    private int numOfPlacedBlocks = 0;
+    private GameObject[] gameObjectsWithTag;
+    private bool isCameraAdjustPaused;
 
     // Start is called before the first frame update
     void Start()
@@ -46,8 +50,29 @@ public class FollowHighestObject : MonoBehaviour
     }
 
     void AdjustCameraPosition() {
-        highestGameObject = GameObject.FindGameObjectsWithTag(objectTag).OrderBy(highestGameObject => highestGameObject.transform.position.y).Last();
-        newCameraPos = new Vector3(highestGameObject.transform.position.x, highestGameObject.transform.position.y + verticalOffset, transform.position.z);
-        this.transform.position = Vector3.Lerp(transform.position, newCameraPos, cameraSpeed * Time.deltaTime);
+        gameObjectsWithTag = GameObject.FindGameObjectsWithTag(objectTag);
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            isCameraAdjustPaused = true;
+            StopCoroutine("PauseCameraMoving");
+        }
+
+        if (Input.GetMouseButtonUp(1)) {
+            StartCoroutine("PauseCameraMoving");
+        }
+
+        if (!isCameraAdjustPaused) {
+            numOfPlacedBlocks = gameObjectsWithTag.Length;
+            highestGameObject = gameObjectsWithTag.OrderBy(highestGameObject => highestGameObject.transform.position.y).Last();
+            newCameraPos = new Vector3(highestGameObject.transform.position.x, highestGameObject.transform.position.y + verticalOffset, transform.position.z);
+            this.transform.position = Vector3.Lerp(transform.position, newCameraPos, cameraSpeed * Time.deltaTime);
+        }
+    }
+
+    IEnumerator PauseCameraMoving()
+    {
+        yield return new WaitForSeconds(pauseLength);
+        isCameraAdjustPaused = false;
     }
 }
