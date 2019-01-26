@@ -17,8 +17,9 @@ public class BlockTimer : MonoBehaviour
 
             if (currentTime >= countDown)
             {
-                //spawn roof
-                Debug.Log("min height achieved");
+				GameObject.Find("Tracker").GetComponent<Tracker>().roofSpawner.SetActive(true);
+                Debug.LogFormat("min height achieved {0}", ":smiley:");
+				//Instantiate(roofSpawner);
             }
         }
     }

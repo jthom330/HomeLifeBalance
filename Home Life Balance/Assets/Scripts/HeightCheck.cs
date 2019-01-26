@@ -12,13 +12,20 @@ public class HeightCheck : MonoBehaviour
         resetTimer -= Time.deltaTime;
         if (resetTimer <= 0)
         {
-            //remove roof option 
+            //remove roof option
+			Debug.LogFormat("Remove roof: {0}", GameObject.Find("Tracker"));
+			GameObject.Find("Tracker").GetComponent<Tracker>().roofSpawner.SetActive(false);			
             
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+		if(collision.tag == "PlacedBlock")
+        {
+			//Debug.LogFormat("collisionBlock stay: {0}", collision.transform.position);
+            collision.GetComponent<BlockTimer>().StartTimer();
+        }
         resetTimer = 10f;
     }
 
@@ -26,6 +33,7 @@ public class HeightCheck : MonoBehaviour
     {
         if(collision.tag == "PlacedBlock")
         {
+			//Debug.LogFormat("collisionBlock enter: {0}", collision.transform.position);
             collision.GetComponent<BlockTimer>().StartTimer();
         }
     }
