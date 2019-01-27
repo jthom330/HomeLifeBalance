@@ -30,10 +30,18 @@ public class TimeManager : MonoBehaviour
             Debug.Log("game over");
             timeText.text = "0.0";
             timeText.color = Color.red;
+            DisableInventory();
         }
         else
         {
             timeText.text = timeLeft.ToString("F1");
+        }
+    }
+
+
+    void DisableInventory() {
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("block")) {
+            obj.SetActive(false);
         }
     }
 }
