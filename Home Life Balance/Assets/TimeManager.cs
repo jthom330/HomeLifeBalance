@@ -14,7 +14,8 @@ public class TimeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        winConditionMet = false;
+        loseConditionMet = false;
     }
 
     void Awake()
