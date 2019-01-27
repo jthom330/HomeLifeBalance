@@ -21,11 +21,12 @@ public class SpawnItem : MonoBehaviour
             }
         }
 
-        holding = Instantiate(drops[index], transform.position, rot);
+        holding = Instantiate(drops[index], transform.position, Quaternion.identity);
         holding.transform.parent = gameObject.transform;
 
         oldScale = holding.transform.lossyScale;
         holding.transform.localScale = smallScale * Mathf.Sign(oldScale.x);
+        holding.transform.rotation = rot;
         holding.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
 	}
 	

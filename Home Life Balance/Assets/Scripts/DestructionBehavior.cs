@@ -20,6 +20,8 @@ public class DestructionBehavior : MonoBehaviour
 
     IEnumerator AnimateAndDestroy(Vector2 point, GameObject block)
     {
+
+        gameObject.GetComponent<AudioSource>().Play();
         GameObject instance = Instantiate(destroyEffect, block.transform.position, Quaternion.identity);
         instance.transform.localScale = Vector2.zero;
         float ElapsedTime = 0.0f;
