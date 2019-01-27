@@ -11,11 +11,21 @@ public class SpawnItem : MonoBehaviour
 	
 	void Spawn()
 	{
-        holding = Instantiate(drops[Random.Range(0, drops.Length)], transform.position, Quaternion.identity);
+        Quaternion rot = Quaternion.identity;
+        int index = Random.Range(0, drops.Length);
+        if (drops.Length > 1)
+        {
+            if (index == 0 || index == 1 || index == 4 || index == 5 || index == 7)
+            {
+                rot = Quaternion.Euler(0.0f, 0.0f, Random.Range(0, 4) * 90);
+            }
+        }
+
+        holding = Instantiate(drops[index], transform.position, rot);
         holding.transform.parent = gameObject.transform;
 
         oldScale = holding.transform.lossyScale;
-        holding.transform.localScale = smallScale;
+        holding.transform.localScale = smallScale * Mathf.Sign(oldScale.x);
         holding.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
 	}
 	

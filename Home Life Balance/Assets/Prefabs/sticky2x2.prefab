@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1351082845}
   - component: {fileID: 1351082851}
   - component: {fileID: 1351082844}
+  - component: {fileID: 2080004429865479266}
   m_Layer: 0
   m_Name: sticky2x2
   m_TagString: block
@@ -273,3 +274,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fc5973e4fc6da694980e23adb7550e80, type: 3}
   - {fileID: 8300000, guid: 4694a45bccf654a4aa8cdb59dc768833, type: 3}
   - {fileID: 8300000, guid: 9a1d9ee585e8da84d91a54c05d22bbc7, type: 3}
+--- !u!114 &2080004429865479266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351082843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e564af5527c92734b921fd58d45d67a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectValue: 5

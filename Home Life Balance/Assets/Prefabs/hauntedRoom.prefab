@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e564af5527c92734b921fd58d45d67a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectValue: 10
+  objectValue: 20
 --- !u!95 &2115427104
 Animator:
   serializedVersion: 3
