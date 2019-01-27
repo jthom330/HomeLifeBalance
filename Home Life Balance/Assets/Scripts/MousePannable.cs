@@ -8,6 +8,7 @@ public class MousePannable : MonoBehaviour
     private Vector3 lastCameraPosition;
     public string tagThatBlocksPanning = "UnplacedBlock";
     public bool pannable;
+    private int activeChildCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,13 @@ public class MousePannable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.FindGameObjectsWithTag(tagThatBlocksPanning).Length <= 1)
+        activeChildCount = 0;
+        foreach (Transform child in transform)
+        {
+            if (child.gameObject.activeSelf)
+                activeChildCount++;
+        }
+        if (GameObject.FindGameObjectsWithTag(tagThatBlocksPanning).Length <= activeChildCount)
         {
             pannable = true;
             if (Input.GetMouseButtonDown(1))

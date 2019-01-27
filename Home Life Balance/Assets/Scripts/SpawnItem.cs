@@ -15,6 +15,7 @@ public class SpawnItem : MonoBehaviour
 
         oldScale = holding.transform.lossyScale;
         holding.transform.localScale = Vector2.one * 0.04f;
+        holding.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
 	}
 	
     // Start is called before the first frame update
