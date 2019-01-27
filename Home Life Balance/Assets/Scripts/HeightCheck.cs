@@ -13,7 +13,7 @@ public class HeightCheck : MonoBehaviour
         if (resetTimer <= 0)
         {
             //remove roof option
-			Debug.LogFormat("Remove roof: {0}", GameObject.Find("Tracker"));
+			//Debug.LogFormat("Remove roof: {0}", GameObject.Find("Tracker"));
 			GameObject.Find("Tracker").GetComponent<Tracker>().roofSpawner.SetActive(false);			
             
         }
