@@ -46,4 +46,15 @@ public class DragBehavior : MonoBehaviour
             pickup = false;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "PlacedBlock")
+        {
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = localGravityScale;
+            gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            gameObject.tag = "PlacedBlock";
+            pickup = false;
+        }
+    }
 }

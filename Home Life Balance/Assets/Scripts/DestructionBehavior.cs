@@ -5,10 +5,11 @@ using UnityEngine;
 public class DestructionBehavior : MonoBehaviour
 {
     public GameObject destroyEffect;
+    public GameObject baseGameObject;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "PlacedBlock")
+        if(collision.gameObject.tag == "PlacedBlock" && collision.gameObject != baseGameObject)
         {
             collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
             collision.gameObject.GetComponent<Collider2D>().enabled = false;

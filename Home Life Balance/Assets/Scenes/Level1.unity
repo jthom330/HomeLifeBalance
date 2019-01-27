@@ -314,6 +314,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roofSpawner: {fileID: 0}
+--- !u!1 &421466239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8547706740509812272, guid: 1c36c8db07fb172429d82b187cc95029,
+    type: 3}
+  m_PrefabInstance: {fileID: 1218357307}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &629448509
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +736,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7523877202026930593, guid: 8c409a73714f0de43aad59f2e88a2203,
+        type: 3}
+      propertyPath: baseGameObject
+      value: 
+      objectReference: {fileID: 421466239}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c409a73714f0de43aad59f2e88a2203, type: 3}
 --- !u!1001 &1218357307
@@ -797,6 +808,11 @@ PrefabInstance:
     - target: {fileID: 8547706740509812238, guid: 1c36c8db07fb172429d82b187cc95029,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172370244046639168, guid: 1c36c8db07fb172429d82b187cc95029,
+        type: 3}
+      propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
