@@ -26,8 +26,6 @@ public class ScoreMultiplier : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("touching trigger");
-
         // add multiplier
         if (!wasTouching)
         {

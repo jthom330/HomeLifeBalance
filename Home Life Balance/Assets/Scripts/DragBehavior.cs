@@ -68,7 +68,6 @@ public class DragBehavior : MonoBehaviour
     public void Update() {
         currentMouseX = Input.mousePosition.x;
         mouseSpeed = (currentMouseX - prevMouseX);
-        Debug.Log(mouseSpeed);
         prevMouseX = currentMouseX;
     }
 }

@@ -54,7 +54,6 @@ public class SpawnItem : MonoBehaviour
     {
         if (other.gameObject != holding && holding != null)
         {
-            Debug.Log(other.gameObject.name + holding.name);
             holding.SetActive(false);
         }
 

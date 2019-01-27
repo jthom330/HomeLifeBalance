@@ -27,7 +27,6 @@ public class TimeManager : MonoBehaviour
         
         if (timeLeft <= 0)
         {
-            Debug.Log("game over");
             timeText.text = "0.0";
             timeText.color = Color.red;
             DisableInventory();
