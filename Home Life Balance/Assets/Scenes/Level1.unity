@@ -2216,7 +2216,7 @@ PrefabInstance:
     - target: {fileID: 5519648549004324587, guid: a02dcf30a28d5ea45b95222d6f3f8a21,
         type: 3}
       propertyPath: resetTimer
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a02dcf30a28d5ea45b95222d6f3f8a21, type: 3}
