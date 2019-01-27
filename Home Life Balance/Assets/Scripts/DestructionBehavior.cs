@@ -9,7 +9,7 @@ public class DestructionBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "PlacedBlock" && collision.gameObject != baseGameObject)
+        if((collision.gameObject.tag == "PlacedBlock" || collision.gameObject.tag == "UnplacedBlock") && collision.gameObject != baseGameObject)
         {
             collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
             collision.gameObject.GetComponent<Collider2D>().enabled = false;

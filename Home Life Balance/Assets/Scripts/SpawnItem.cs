@@ -6,15 +6,16 @@ public class SpawnItem : MonoBehaviour
 {
 	public GameObject[] drops;
 	private GameObject holding;
-    private Vector3 oldScale; 
+    private Vector3 oldScale;
+    public Vector3 smallScale = Vector2.one* 0.04f;
 	
 	void Spawn()
 	{
-		holding = Instantiate(drops[Random.Range(0, drops.Length)], transform.position, Quaternion.identity);
+        holding = Instantiate(drops[Random.Range(0, drops.Length)], transform.position, Quaternion.identity);
         holding.transform.parent = gameObject.transform;
 
         oldScale = holding.transform.lossyScale;
-        holding.transform.localScale = Vector2.one * 0.04f;
+        holding.transform.localScale = smallScale;
         holding.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
 	}
 	
@@ -26,12 +27,26 @@ public class SpawnItem : MonoBehaviour
 	
 	void OnTriggerExit2D(Collider2D other)
 	{
-		if (other.gameObject == holding)
-		{
+        if (other.gameObject == holding)
+        {
             holding.transform.parent = null;
             holding.transform.localScale = oldScale;
+            holding.tag = "UnplacedBlock";
 
             Spawn();
-		}
+        }
+        else {
+            holding.SetActive(true);
+        }
 	}
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject != holding && holding != null)
+        {
+            Debug.Log(other.gameObject.name + holding.name);
+            holding.SetActive(false);
+        }
+
+    }
 }

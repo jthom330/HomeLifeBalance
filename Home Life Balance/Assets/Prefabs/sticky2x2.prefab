@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1351082844}
   m_Layer: 0
   m_Name: sticky2x2
-  m_TagString: UnplacedBlock
+  m_TagString: block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

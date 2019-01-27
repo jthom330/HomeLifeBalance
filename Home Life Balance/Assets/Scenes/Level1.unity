@@ -1066,9 +1066,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f51e437122b394d8dce8ddc1d65f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 0.05
+  sensitivity: 0.025
   tagThatBlocksPanning: UnplacedBlock
   pannable: 0
+  minCameraHeight: -5
 --- !u!4 &1645695945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8077441029590451294, guid: d2a289928d9dbc847b6453ccfe0793a0,

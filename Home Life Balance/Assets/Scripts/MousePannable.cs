@@ -9,6 +9,7 @@ public class MousePannable : MonoBehaviour
     public string tagThatBlocksPanning = "UnplacedBlock";
     public bool pannable;
     private int activeChildCount = 0;
+    public float minCameraHeight;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,10 @@ public class MousePannable : MonoBehaviour
         }
         else {
             pannable = false;
+        }
+
+        if (transform.position.y < minCameraHeight) {
+            transform.position = new Vector3(transform.position.x, minCameraHeight, transform.position.z);
         }
     }
 }

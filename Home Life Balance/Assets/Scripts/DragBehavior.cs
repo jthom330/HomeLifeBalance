@@ -8,16 +8,22 @@ public class DragBehavior : MonoBehaviour
     public float localGravityScale = 1;
     public float speed = 10;
     public bool pickup = true;
+    private float prevMouseX;
+    private float currentMouseX;
+    private float mouseSpeed = 0;
+    Rigidbody2D objRigidBody;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+        objRigidBody = gameObject.GetComponent<Rigidbody2D>();
+        objRigidBody.gravityScale = 0;
+        prevMouseX = Input.mousePosition.x;
     }
 
     private void OnMouseDown()
     {
-        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        objRigidBody.constraints = RigidbodyConstraints2D.None;
         if (pickup)
         {
             gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
@@ -40,21 +46,29 @@ public class DragBehavior : MonoBehaviour
     {
         if (pickup)
         {
-            gameObject.GetComponent<Rigidbody2D>().gravityScale = localGravityScale;
-            gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            gameObject.tag = "PlacedBlock";
+            objRigidBody.gravityScale = localGravityScale;
+            objRigidBody.bodyType = RigidbodyType2D.Dynamic;
+            objRigidBody.AddForce(transform.right * mouseSpeed);
+            //gameObject.tag = "PlacedBlock";
             pickup = false;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "PlacedBlock")
+        if (collision.gameObject.tag == "PlacedBlock" && gameObject.tag == "UnplacedBlock")
         {
-            gameObject.GetComponent<Rigidbody2D>().gravityScale = localGravityScale;
-            gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            objRigidBody.gravityScale = localGravityScale;
+            objRigidBody.bodyType = RigidbodyType2D.Dynamic;
             gameObject.tag = "PlacedBlock";
             pickup = false;
         }
+    }
+
+    public void Update() {
+        currentMouseX = Input.mousePosition.x;
+        mouseSpeed = (currentMouseX - prevMouseX);
+        Debug.Log(mouseSpeed);
+        prevMouseX = currentMouseX;
     }
 }
