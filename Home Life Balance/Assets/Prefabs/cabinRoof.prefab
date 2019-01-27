@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 954035a0408fbc643a6bf1f4083344da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countDown: 10
+  countDown: 2
 --- !u!60 &5259222937352849240
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -187,4 +187,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707008b26f22b3b4e94514ea88bbe353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winCountDown: 10
+  winCountDown: 2

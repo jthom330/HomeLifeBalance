@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlockTimer : MonoBehaviour
 {
-    public float countDown = 5;
+    public float countDown = 3;
     private float currentTime = 0;
     private bool isAtHeight = false;
     

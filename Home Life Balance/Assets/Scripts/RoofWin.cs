@@ -11,8 +11,7 @@ public class RoofWin : MonoBehaviour
     {
         if(currentTime >= winCountDown)
         {
-            // Win 
-            Debug.Log("Win!");
+            TimeManager.winConditionMet = true;
         }
     }
 

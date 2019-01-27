@@ -8,6 +8,9 @@ public class TimeManager : MonoBehaviour
 
     public float timeLeft = 30;
     Text timeText;
+    public static bool winConditionMet = false;
+    public static bool loseConditionMet = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +33,16 @@ public class TimeManager : MonoBehaviour
             timeText.text = "0.0";
             timeText.color = Color.red;
             DisableInventory();
+            CheckForWin();
         }
         else
         {
             timeText.text = timeLeft.ToString("F1");
+        }
+
+        if (winConditionMet) {
+            DisableInventory();
+            timeText.enabled = false;
         }
     }
 
@@ -41,6 +50,23 @@ public class TimeManager : MonoBehaviour
     void DisableInventory() {
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("block")) {
             obj.SetActive(false);
+        }
+    }
+
+    void CheckForWin()
+    {
+        bool isRoofPresent = false;
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("PlacedBlock"))
+        {
+            if (obj.GetComponent<RoofWin>() && obj.activeSelf)
+            {
+                isRoofPresent = true;
+            }
+        }
+
+        if (!isRoofPresent) {
+            loseConditionMet = true;
+            timeText.enabled = false;
         }
     }
 }
