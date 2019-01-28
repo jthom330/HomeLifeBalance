@@ -20,6 +20,8 @@ public class GameOverMessageHandler : MonoBehaviour
             finalScore = ScoreManager.score;
             finalMessageText.text = "Win!\nFinalScore: " + finalScore;
             finalMessageText.color = Color.green;
+            Destroy(GameObject.Find("TimeManager"));
+            Destroy(gameObject.GetComponent<GameOverMessageHandler>());
         }
 
         if (TimeManager.loseConditionMet)
@@ -27,6 +29,8 @@ public class GameOverMessageHandler : MonoBehaviour
             finalScore = ScoreManager.score;
             finalMessageText.text = "You Lose";
             finalMessageText.color = Color.red;
+            Destroy(GameObject.Find("TimeManager"));
+            Destroy(gameObject.GetComponent<GameOverMessageHandler>());
         }
     }
 }
